@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace EnableAnselForRoblox
@@ -33,6 +34,15 @@ namespace EnableAnselForRoblox
                 Console.WriteLine("Error while fetching bloxstrap roblox version. please contact me on discord. \nfetch my discord from my discord webpage http://owo.bounceme.net");
                 Console.ReadLine();
                 Environment.Exit(69);
+            }
+            Console.Write("Download Glossy Shaders? (Y/N)");
+            if (Console.ReadKey().Key == ConsoleKey.Y || Console.ReadKey().Key == ConsoleKey.N)
+            {
+                Console.Write("Installing...");
+                File.Delete(latestbloxstraproblox);
+                Console.Write("Installed!");
+                Thread.Sleep(1000);
+                Environment.Exit(0);
             }
             Console.WriteLine("Checking for roblox, cloning and renaming.");
             if (File.Exists(latestbloxstraproblox + "\\RobloxPlayerBeta.exe"))
